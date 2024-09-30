@@ -1,0 +1,29 @@
+<%- include('./includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/auth.css">
+    </head>
+
+    <body>
+
+        <main>
+            <div id="auth-form-container">
+                    <form action="/login" class="auth-form" method="post">
+                    <% if(errorMessage){ %>
+                        <div class="errorMessage bg-red-500 text-white rounded-sm">
+                            <%= errorMessage %>
+                        </div>
+                        <% } %>
+                            <p class="formName">Login</p>
+                            <!-- <p>Enter your credentials to login</p> -->
+                            <!-- <label for="email">Email</label> -->
+                            <input type="email"  name="email" id="email" placeholder="Email" autofocus required>
+                            <!-- <label for="password">Password</label> -->
+                            <input  type="password" name="password" id="password" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                            <p >Don't have an account? <a href="/signup" >Sign Up</a></p>
+                    </form>
+            </div>
+          
+        </main>
+
+
+        <%- include('./includes/end.ejs') %>

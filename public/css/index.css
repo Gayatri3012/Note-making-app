@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+.first-color { 
+	background: #f6f6f6; 
+}
+	
+.second-color { 
+	background: #d6e4f0; 
+}
+
+.third-color { 
+	background: #1e56a0; 
+}
+
+.fourth-color { 
+	background: #163172; 
+}
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+@media (max-width: 639px) {
+  /* Your CSS rules for screens smaller than 640px here */
+  #index-page{
+    flex-direction: column;
+  }
+  #index-icon{
+    width: 20rem;
+    height: 20rem;
+  }
+  #heroContent{
+    width: 70%;
+    padding: 1rem;
+  }
+}
+
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family:  'Google Sans';
+  background-color: rgb(249, 250, 255);
+  color: black;
+  background-repeat: no-repeat;
+}
+
+#heroContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+#heroContent p{
+  color: #163172;
+  font-size: medium;
+  font-weight: 400;
+}
+
+#heroContent a{
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  background-color: #163172;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+}
+
+
+#index-icon {
+  max-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#index-icon img{
+  width: 3.5rem;
+
+}
+
+#index-icon p{
+  color: #1b4b8a;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.home-page {
+  background-color: rgba(92, 92, 92, 0.445);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  padding: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 500px;
+}
+
+
+
+@media (min-width: 640px) and (max-width:1024px){
+  #index-page{
+    flex-direction: column;
+  }
+
+  #index-icon{
+    width: 20rem;
+    height: 20rem;
+  }
+
+  #heroContent{
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
+@media (min-width:1024px) {
+  #heroContent{
+    padding: 3rem;
+  }
+}
