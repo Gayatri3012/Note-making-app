@@ -5,13 +5,16 @@ const path = require('path');
 
 const User = require('./models/user')
 
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const MONGO_URI = 'mongodb+srv://takawalegayatri:Password@cluster0.ksjgks7.mongodb.net/noteboard?retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI
+const port = process.env.PORT || 10000;
 
 const app = express();
 const store = new MongoDBStore({
-    uri: MONGO_URI,
+    uri: process.env.MONGO_URI,
     collection: 'sessions'
 });
 
@@ -61,7 +64,7 @@ app.use((error, req, res, next) => {
 
 mongoose.connect(MONGO_URI)
     .then(result => {
-        app.listen(3000, () => {
+        app.listen(port, '0.0.0.0', () => {
             console.log('Server is running fine...');
         });
     })
