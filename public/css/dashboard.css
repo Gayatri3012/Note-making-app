@@ -165,7 +165,7 @@ main {
     }
 
     .note-editor{
-        height: 80%;
+        height: 70%;
     }
   
     .pagination-div{
@@ -214,6 +214,7 @@ main {
 .content {
     width: 100%;
     display: flex;
+    height: auto;
     /* justify-content: space-evenly; */
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -329,6 +330,10 @@ main {
 .search-result h1{
     color: #1e56a0;
     margin-top: 20px;
+}
+
+.editor-container{
+    background-color: #aac8f3af;
 }
 
 .note-editor {
