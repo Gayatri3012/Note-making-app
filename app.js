@@ -35,7 +35,7 @@ const noteBoardRoutes = require('./routes/noteboard');
 const authRoutes = require('./routes/auth');
 
 const url = `https://note-making-app-jh5f.onrender.com`; 
-const interval = 30 * 100;
+const interval = 600000;
 
 function reloadWebsite() {
   axios.get(url)
