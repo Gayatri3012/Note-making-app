@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
+const axios = require('axios')
 
 const User = require('./models/user')
 
@@ -33,11 +34,21 @@ app.set('views', 'views');
 const noteBoardRoutes = require('./routes/noteboard');
 const authRoutes = require('./routes/auth');
 
-// app.use((req, res) => {
-//     setInterval(() => {
-//         console.log('heartbeat');
-//     }, 600000);
-//   });
+const url = `https://note-making-app-jh5f.onrender.com`; 
+const interval = 30 * 100;
+
+function reloadWebsite() {
+  axios.get(url)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
+}
+
+setInterval(reloadWebsite, interval);
+
 
 app.use((req, res, next) => {
     if (!req.session.user) {

@@ -14,6 +14,7 @@
     "@editorjs/header": "^2.8.1",
     "@editorjs/list": "^1.9.0",
     "@editorjs/paragraph": "^2.11.3",
+    "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "connect-mongodb-session": "^5.0.0",
@@ -22,8 +23,7 @@
     "express": "^4.18.2",
     "express-session": "^1.18.0",
     "express-validator": "^7.0.1",
-    "mongoose": "^8.1.1",
-    "vercel": "^37.6.0"
+    "mongoose": "^8.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.3",
