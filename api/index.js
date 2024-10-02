@@ -33,6 +33,12 @@ app.set('views', 'views');
 const noteBoardRoutes = require('./routes/noteboard');
 const authRoutes = require('./routes/auth');
 
+// app.use((req, res) => {
+//     setInterval(() => {
+//         console.log('heartbeat');
+//     }, 600000);
+//   });
+
 app.use((req, res, next) => {
     if (!req.session.user) {
         return next();
