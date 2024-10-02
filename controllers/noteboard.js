@@ -2,7 +2,7 @@ const Note = require('../models/note');
 
 const parser = require('../public/js/parseEditorContent');
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 6;
 
 
 //helper function
@@ -52,10 +52,8 @@ exports.noteEditor = (req, res, next) => {
 }
 
 exports.postNoteEditor = (req, res, next) => {
-    console.log(req.body);
     const editorData = req.body.editorData;
     const editedTitle = req.body.editedNoteTitle;
-    console.log(editorData); 
     if(req.body.editedNote === 'true'){
         Note.findById(req.body.noteId)
         .then(note => {
@@ -165,7 +163,6 @@ exports.deleteNote = (req, res, next) => {
 
 exports.getUserProfile = (req, res, next) => {
     const user = req.session.user;
-    console.log(user)
     res.render('user-profile',{
         pageTitle : 'User Profile',
         user: user,
