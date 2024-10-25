@@ -34,21 +34,6 @@ app.set('views', 'views');
 const noteBoardRoutes = require('./routes/noteboard');
 const authRoutes = require('./routes/auth');
 
-const url = `https://note-making-app-jh5f.onrender.com`; 
-const interval = 600000;
-
-function reloadWebsite() {
-  axios.get(url)
-    .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
-    })
-    .catch(error => {
-      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
-    });
-}
-
-setInterval(reloadWebsite, interval);
-
 
 app.use((req, res, next) => {
     if (!req.session.user) {
