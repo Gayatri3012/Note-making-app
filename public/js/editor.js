@@ -1,3 +1,4 @@
+
 let editor;
 
 const initializeEditor = (data) => {
@@ -18,13 +19,13 @@ const initializeEditor = (data) => {
                 inlineToolbar: true,
             },
             list: {
-                class: List,
+                class: EditorjsList,
                 inlineToolbar: true
             },
-            checklist: {
-                class: Checklist,
-                inlineToolbar: true,
-            },
+            // checklist: {
+            //     class: Checklist,
+            //     inlineToolbar: true,
+            // },
         },
         data: data || null  
     });

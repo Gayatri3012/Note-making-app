@@ -12,7 +12,7 @@
     "@editorjs/checklist": "^1.6.0",
     "@editorjs/editorjs": "^2.29.0",
     "@editorjs/header": "^2.8.1",
-    "@editorjs/list": "^1.9.0",
+    "@editorjs/list": "^2.0.2",
     "@editorjs/paragraph": "^2.11.3",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
