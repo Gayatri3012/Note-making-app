@@ -1,7 +1,12 @@
 
 function parser(editorData) {
-    let htmlContent = '';
+  
+    console.log('---------------in editor data--------------')
+
+
+    let htmlContent = ''; 
     for(const block of editorData.blocks){
+        console.log(block)
         switch(block.type) {
             case 'header':{
                 htmlContent += `<h${block.data.level}>${block.data.text}</h${block.data.level}>`;
@@ -14,22 +19,32 @@ function parser(editorData) {
             }
             
             case 'list': {
-                htmlContent += `<${block.data.style === 'ordered' ? 'ol' : 'ul'}>`;
-                for(const item of block.data.items) {
-                    htmlContent += `<li>${item}</li>`
+                console.log(block.data.style)
+                if(block.data.style === 'checklist'){
+                    htmlContent += `<ul id="checklist">`;
+                    for (const item of block.data.items) {
+                        htmlContent += `<li> ${item.meta.checked ? '✅' : '⬜'} ${item.content || ''}</li>`;
+                    }
+                    htmlContent += `</ul>`;
+                } else if(block.data.style === 'ordered'){
+                    htmlContent += `<ol>`;
+                    for(const item of block.data.items) {
+                        console.log(item)
+                        htmlContent += `<li>${item.content || ''}</li>`
+                    }
+                    htmlContent += `</ol>`;
+                } else {
+                    htmlContent += `<ul>`;
+                    for(const item of block.data.items) {
+                        console.log(item)
+                        htmlContent += `<li>${item.content || ''}</li>`
+                    }
+                    htmlContent += `</ul>`;
                 }
-                htmlContent += `</${block.data.style === 'ordered' ? 'ol' : 'ul'}>`;
+               
                 break;
             }
 
-            case 'checklist' : {
-                htmlContent += `<ul id="checklist">`;
-                for (const item of block.data.items) {
-                    htmlContent += `<li> ${item.checked ? '✅' : '⬜'} ${item.text}</li>`;
-                }
-                htmlContent += `</ul>`;
-                break;
-            }
 
             default: 
                 break;

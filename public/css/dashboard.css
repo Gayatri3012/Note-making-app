@@ -382,6 +382,14 @@ li {
     align-items: flex-start;
 }
 
+ol {
+    list-style: decimal; 
+}
+
+ul {
+    list-style: disc; 
+}
+
 .note-editor input {
     width: 100%;
     border-style: none;
