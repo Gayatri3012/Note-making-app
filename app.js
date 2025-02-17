@@ -64,9 +64,24 @@ app.use((error, req, res, next) => {
     });
 });
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 
 mongoose.connect(MONGO_URI)
     .then(result => {
+      
+        app.get('/', (req, res) => {
+            console.log('Server is ready, redirecting to home...');
+            res.redirect('/home');  
+        });
+
+        app.get('/home', (req, res) => {
+            res.render('index', { pageTitle: 'Home' });
+        });
+
+
         app.listen(port, '0.0.0.0', () => {
             console.log('Server is running fine...');
         });

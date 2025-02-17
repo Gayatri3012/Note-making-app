@@ -69,12 +69,14 @@ body {
 }
 
 #heroContent a{
-  padding: 0.2rem 0.5rem;
+  padding: 0.4rem 1.5rem;
   border-radius: 8px;
   background-color: #163172;
   color: white;
   font-size: large;
   font-weight: 500;
+
+  
 }
 
 
